@@ -1,0 +1,2 @@
+# 特定のディレクトリを無視
+/wp-content/themes/haruoshi_origin/node_modules/*
