@@ -1,3 +1,30 @@
+:root {
+    --header-height: 10%;
+    --footer-height: 3%;
+  }
+
 body {
-    background-color: coral;
+    height: 2000px;
+    position: relative;
+    background-color: pink;
+}
+
+.container {
+    margin-top: var(--header-height);
+  }
+  
+.site-header {
+    top:0;
+    background: #fff;
+    position: fixed;
+    height: var(--header-height);
+    width: 100%;
+}
+
+.site-footer {
+    position: absolute;
+    background: greenyellow;
+    bottom: 0;
+    height: var(--footer-height);
+    width: 100%;
 }

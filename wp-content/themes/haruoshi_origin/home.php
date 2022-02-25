@@ -1,5 +1,7 @@
 <?php get_header(); ?>
 
-<h2>hoge</h2>
+<div class="container">
+    hoge
+</div>
 
 <?php get_footer(); ?>
