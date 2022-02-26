@@ -1,0 +1,12 @@
+@import "variables";
+@import "mixin";
+
+body {
+    position: relative;
+}
+
+.container {
+    height: 2000px;
+    background-color: pink;
+    margin-top: $header-height;
+  }

@@ -1,9 +1,15 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts');
 const path = require('path');
 
 module.exports = {
   mode:'development',
-  entry:'./src/scss/style.scss',
+  entry: {
+    common: './src/scss/common.scss',
+    header: './src/scss/header.scss',
+    footer: './src/scss/footer.scss',
+    home: './src/scss/home.scss'
+  },
   //ソース元のjs
   output: {
     path: path.resolve(__dirname, 'dist')
@@ -33,8 +39,10 @@ module.exports = {
       }
     ]
   },
-  plugins: [new MiniCssExtractPlugin({
-    filename:'style.css'
+  plugins: [
+    new RemoveEmptyScriptsPlugin(),
+    new MiniCssExtractPlugin({
+    filename:'[name].css',
     //出力するcssのファイル名
   })]
 };
