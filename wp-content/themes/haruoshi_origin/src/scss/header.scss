@@ -1,0 +1,10 @@
+@import "variables";
+@import "mixin";
+
+.site-header {
+    top:0;
+    background: #fff;
+    position: fixed;
+    height: $header-height;
+    width: 100%;
+}

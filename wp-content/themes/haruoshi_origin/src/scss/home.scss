@@ -1,0 +1,8 @@
+@import "variables";
+@import "mixin";
+
+.container {
+    height: 2000px;
+    background-color: pink;
+    margin-top: $header-height;
+  }

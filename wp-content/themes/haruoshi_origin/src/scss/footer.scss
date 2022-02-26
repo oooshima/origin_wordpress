@@ -1,0 +1,9 @@
+@import "variables";
+@import "mixin";
+
+.site-footer {
+    background: greenyellow;
+    bottom: 0;
+    height: $footer-height;
+    width: 100%;
+}
