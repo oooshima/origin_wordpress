@@ -19,6 +19,15 @@
 
 <body>
 <header class="site-header">
-	header
+	<h1>My Work</h1>
+	<nav>
+		<ul class="global-nav">
+			<li>About</li>
+			<li>Works</li>
+			<li>News</li>
+			<li>Contact</li>
+			<li><img src="<?php echo esc_url( get_stylesheet_directory_uri() ) . '/img/instagram-icon.png'; ?>" alt="instagram" width=20px></img></li>
+		</ul>
+	</nav>
 </header>
 <main class="main" role="main">

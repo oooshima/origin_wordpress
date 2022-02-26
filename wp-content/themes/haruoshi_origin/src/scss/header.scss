@@ -5,6 +5,17 @@
     top:0;
     background: #fff;
     position: fixed;
-    height: $header-height;
-    width: 100%;
+    max-width: $max-header-width;
+	max-height: $max-header-height;
+	width: calc(100% - 10px);
+	height: calc(100% - 10px);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.global-nav {
+	display: flex;
+	justify-content: space-evenly;
+	width: $max-global-nav-width;
 }
