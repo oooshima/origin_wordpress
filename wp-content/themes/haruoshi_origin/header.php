@@ -12,4 +12,4 @@
 <header class="site-header">
     header
 </header>
-<main>
+<main class="main" role="main">
