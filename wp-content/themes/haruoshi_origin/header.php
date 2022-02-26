@@ -12,3 +12,4 @@
 <header class="site-header">
     header
 </header>
+<main>

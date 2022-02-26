@@ -12,7 +12,7 @@ module.exports = {
   },
   //ソース元のjs
   output: {
-    path: path.resolve(__dirname, 'dist/css')
+    path: path.resolve(__dirname, 'dist')
   },
   //出力先のフォルダ
   module: {
@@ -42,7 +42,7 @@ module.exports = {
   plugins: [
     new RemoveEmptyScriptsPlugin(),
     new MiniCssExtractPlugin({
-    filename:'[name].css',
+    filename:'css/[name].css',
     //出力するcssのファイル名
   })]
 };

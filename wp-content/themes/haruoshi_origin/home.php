@@ -1,7 +1,9 @@
 <?php get_header(); ?>
 
-<div class="container">
-    hoge
-</div>
+<article class="container">
+    <section>
+      hoge
+    </section>
+</article>
 
 <?php get_footer(); ?>
