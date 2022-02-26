@@ -19,12 +19,15 @@ function enqueue_style()
         array(),
         filemtime(get_stylesheet_directory() . '/dist/css/footer.css'),
     );
-    wp_enqueue_style(
-        'home', 
-        get_stylesheet_directory_uri() . '/dist/css/home.css', 
-        array(),
-        filemtime(get_stylesheet_directory() . '/dist/css/home.css'),
-    );
+
+    if(is_home()):
+        wp_enqueue_style(
+            'home', 
+            get_stylesheet_directory_uri() . '/dist/css/home.css', 
+            array(),
+            filemtime(get_stylesheet_directory() . '/dist/css/home.css'),
+        );
+    endif;
 }
 
 add_action('wp_enqueue_scripts', 'enqueue_style');
