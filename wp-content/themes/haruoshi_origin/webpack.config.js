@@ -5,7 +5,7 @@ const path = require('path');
 module.exports = {
 	mode: 'development',
 	entry: {
-		common: './src/scss/common.scss',
+		style: './src/scss/style.scss',
 		header: './src/scss/header.scss',
 		footer: './src/scss/footer.scss',
 		home: './src/scss/home.scss'
