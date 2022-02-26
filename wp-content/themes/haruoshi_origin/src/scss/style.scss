@@ -1,0 +1,15 @@
+@import "destyle";
+@import "variables";
+
+html {
+	font-family: Arial;
+	color: $font-base-color;
+}
+
+.main {
+	position: relative;
+}
+
+body {
+	background-color: white;
+}

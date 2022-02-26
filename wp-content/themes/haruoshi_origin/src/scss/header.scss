@@ -2,22 +2,32 @@
 @import "mixin";
 
 .site-header {
-    top:0;
-    background: #fff;
-    position: fixed;
+	top:0;
+	background: #fff;
+	position: fixed;
 	inset: 0;
 	margin: 0 auto;
-    max-width: $max-header-width;
-	max-height: $max-header-height;
+	max-width: 840px;
 	width: calc(100% - 20px);
-	height: calc(100% - 10px);
+	height: $header-height;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	&__logo {
+		font-size: 28px;
+	}
 }
 
 .global-nav {
 	display: flex;
-	justify-content: space-evenly;
-	width: $max-global-nav-width;
+	&__item {
+		margin-right: 30px;
+		&:last-of-type {
+			margin-right: 0;
+		}
+	}
+	&__image {
+		width: auto;
+		height: 20px;
+	}
 }
