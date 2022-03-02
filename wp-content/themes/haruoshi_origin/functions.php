@@ -66,5 +66,3 @@ function codex_custom_init() {
 }
 
 add_action( 'init', 'codex_custom_init' );
-
-
