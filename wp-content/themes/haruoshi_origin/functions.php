@@ -41,6 +41,30 @@ function enqueue_style() {
 			filemtime( get_stylesheet_directory() . '/dist/css/home.css' ),
 		);
 	endif;
+
+	if ( is_singular( 'news' ) ) :
+		wp_enqueue_style(
+			'news',
+			get_stylesheet_directory_uri() . '/dist/css/news.css',
+			array(),
+			filemtime( get_stylesheet_directory() . '/dist/css/news.css' ),
+		);
+	endif;
 }
 
 add_action( 'wp_enqueue_scripts', 'enqueue_style', 11 );
+
+/**
+ * カスタム投稿タイプの定義
+ */
+function codex_custom_init() {
+	$args = array(
+		'public' => true,
+		'label'  => 'News'
+	  );
+	register_post_type('news', $args);
+}
+
+add_action( 'init', 'codex_custom_init' );
+
+

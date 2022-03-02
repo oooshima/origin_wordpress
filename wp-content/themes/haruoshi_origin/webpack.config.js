@@ -8,7 +8,8 @@ module.exports = {
 		style: './src/scss/style.scss',
 		header: './src/scss/header.scss',
 		footer: './src/scss/footer.scss',
-		home: './src/scss/home.scss'
+		home: './src/scss/home.scss',
+		news: './src/scss/news.scss'
 	},
 	//ソース元のjs
 	output: {
