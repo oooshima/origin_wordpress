@@ -2,8 +2,15 @@
 @import "mixin";
 
 .site-footer {
-	background: greenyellow;
+	background: #24292E;
 	bottom: 0;
-	height: 10rem;
+	height: 35px;
 	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	&__copyright {
+		color: $sub-color;
+		font-size: 10px;
+	}
 }
