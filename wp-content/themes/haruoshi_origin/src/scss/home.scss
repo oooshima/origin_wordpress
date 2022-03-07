@@ -1,7 +1,13 @@
 @import "variables";
 @import "mixin";
 
-.container {
-	height: 2000px;
-	margin-top: $header-height;
+.section-wrapper {
+	margin-bottom: 130px;
+	text-align: center;
+}
+
+.seemore-link {
+	margin-top: 50px;
+	border-bottom: solid 1px $main-color;
+	display: inline-block;
 }

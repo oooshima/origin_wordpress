@@ -1,0 +1,17 @@
+@import "variables";
+@import "mixin";
+
+.news {
+	&__article {
+		border-bottom: solid 1px $accent-color;
+		padding: 15px;
+		display: flex;
+		align-items: center;
+		&:first-of-type {
+			border-top: solid 1px $accent-color;
+		}
+	}
+	&__article-title {
+		margin-left: 88px;
+	}
+}
