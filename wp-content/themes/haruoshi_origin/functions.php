@@ -66,8 +66,9 @@ add_action( 'wp_enqueue_scripts', 'enqueue_style', 11 );
 function codex_custom_init() {
 	$args = array(
 		'public' => true,
-		'label'  => 'News'
-	  );
+		'label'  => 'News',
+		'has_archive' => true
+	);
 	register_post_type('news', $args);
 }
 
