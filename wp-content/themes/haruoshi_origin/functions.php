@@ -33,13 +33,15 @@ function enqueue_style() {
 		filemtime( get_stylesheet_directory() . '/dist/css/footer.css' ),
 	);
 
-	if ( is_home() || is_post_type_archive( 'news' ) ) :
+	if ( is_home() ) :
 		wp_enqueue_style(
 			'home',
 			get_stylesheet_directory_uri() . '/dist/css/home.css',
 			array(),
 			filemtime( get_stylesheet_directory() . '/dist/css/home.css' ),
 		);
+	endif;
+	if ( is_home() || is_post_type_archive( 'news' ) ) :
 		wp_enqueue_style(
 			'news',
 			get_stylesheet_directory_uri() . '/dist/css/news.css',
