@@ -17,7 +17,7 @@ get_header(); ?>
 				'posts_per_page' => 3,
 				'order' => 'ASC',
 				'orderby' => 'date'
-				) 
+			) 
 		);
 		if ( $news_query->have_posts() ):
 		?>
