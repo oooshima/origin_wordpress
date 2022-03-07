@@ -19,19 +19,21 @@
 
 <body>
 <header class="site-header">
+	<div class="site-header__contents">
 	<h1 class="site-header__logo">My Work</h1>
-	<nav>
-		<ul class="global-nav">
-			<li class="global-nav__item">About</li>
-			<li class="global-nav__item">Works</li>
-			<li class="global-nav__item">News</li>
-			<li class="global-nav__item">Contact</li>
-			<li class="global-nav__item">
-				<a href="<?php echo esc_url( 'https://www.instagram.com/' ); ?>">
-					<img class="global-nav__image" src="<?php echo esc_url( get_stylesheet_directory_uri() ) . '/img/instagram-icon.png'; ?>" alt="instagram" height="20"/>
-				</a>
-			</li>
-		</ul>
-	</nav>
+		<nav>
+			<ul class="global-nav">
+				<li class="global-nav__item">About</li>
+				<li class="global-nav__item">Works</li>
+				<li class="global-nav__item">News</li>
+				<li class="global-nav__item">Contact</li>
+				<li class="global-nav__item">
+					<a href="<?php echo esc_url( 'https://www.instagram.com/' ); ?>">
+						<img class="global-nav__image" src="<?php echo esc_url( get_stylesheet_directory_uri() ) . '/img/instagram-icon.png'; ?>" alt="instagram" height="20"/>
+					</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
 </header>
 <main class="main" role="main">
