@@ -1,25 +1,18 @@
 @import "variables";
 @import "mixin";
 
-.container {
-	inset: 0;
-	margin: $header-height auto 60px;
-	max-width: $contents-max-width;
-	width: calc(100% - 20px);
-	&__title {
-		font-size: 24px;
-		font-weight: bold;
+.news {
+	margin-bottom: 130px;
+	&__article {
+		border-bottom: solid 1px $accent-color;
+		padding: 15px;
+		display: flex;
+		align-items: center;
+		&:first-of-type {
+			border-top: solid 1px $accent-color;
+		}
 	}
-	&__date {
-		margin: 20px 0;
+	&__article-title {
+		margin-left: 88px;
 	}
-	&__contents {
-		margin: 60px 0;
-	}
-}
-
-.back-link {
-	display: block;
-	text-align: center;
-	margin-bottom: 240px;
 }
