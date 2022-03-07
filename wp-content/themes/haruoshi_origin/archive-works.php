@@ -1,6 +1,6 @@
 <?php
 /**
- * This is archive-news.php
+ * This is archive-works.php
  *
  * @package haruoshi-origin
  */
