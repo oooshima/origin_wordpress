@@ -24,7 +24,9 @@
 		<nav>
 			<ul class="global-nav">
 				<li class="global-nav__item">About</li>
-				<li class="global-nav__item">Works</li>
+				<li class="global-nav__item">
+					<a href="<?= get_post_type_archive_link( 'works' ); ?>">Works</a>
+				</li>
 				<li class="global-nav__item">
 					<a href="<?= get_post_type_archive_link( 'news' ); ?>">News</a>
 				</li>
