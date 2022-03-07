@@ -42,7 +42,7 @@ function enqueue_style() {
 		);
 	endif;
 
-	if ( is_singular( 'news' ) ) :
+	if ( get_post_type() === 'news' ) :
 		wp_enqueue_style(
 			'news',
 			get_stylesheet_directory_uri() . '/dist/css/news.css',
