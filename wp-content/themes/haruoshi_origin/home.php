@@ -8,8 +8,8 @@
 get_header(); ?>
 
 <article class="container">
-	<section class="news content">
-		<h1 class="content__title">News</h1>
+	<section class="news">
+		<h1 class="content-title">News</h1>
 		<?php
 			$posts_array = get_posts( array( 'post_type' => 'news' ) );
 			if (!empty($posts_array)):

@@ -8,17 +8,15 @@
 	width: calc(100% - 20px);
 }
 
-.content {
-	margin-bottom: 130px;
-	&__title {
-		font-size: 24px;
-		font-weight: bold;
-		text-align: center;
-		margin-bottom: 65px;
-	}
+.content-title {
+	font-size: 24px;
+	font-weight: bold;
+	text-align: center;
+	margin-bottom: 65px;
 }
 
 .news {
+	margin-bottom: 130px;
 	&__article {
 		border-bottom: solid 1px $accent-color;
 		padding: 15px;
