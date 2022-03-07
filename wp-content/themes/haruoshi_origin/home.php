@@ -18,7 +18,7 @@ get_header(); ?>
 		<?php while ( $news_query->have_posts() ) : $news_query->the_post(); ?>
 			<li class="news__article">
 				<time><?php the_time( 'Y.m.d' )?></time>
-				<p class="news__article-title" href="<?php the_permalink() ?>"><?php the_title(); ?></p>
+				<p class="news__article-title"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></p>
 			</li>
 		<?php endwhile; endif; wp_reset_postdata(); ?>
 		</ul>
