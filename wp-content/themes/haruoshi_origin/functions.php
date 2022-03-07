@@ -44,9 +44,9 @@ function enqueue_style() {
 	if ( is_home() || is_post_type_archive( 'news' ) ) :
 		wp_enqueue_style(
 			'news',
-			get_stylesheet_directory_uri() . '/dist/css/news.css',
+			get_stylesheet_directory_uri() . '/dist/css/archive-news.css',
 			array(),
-			filemtime( get_stylesheet_directory() . '/dist/css/news.css' ),
+			filemtime( get_stylesheet_directory() . '/dist/css/archive-news.css' ),
 		);
 	endif;
 }

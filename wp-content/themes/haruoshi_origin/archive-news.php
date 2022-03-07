@@ -9,7 +9,7 @@ get_header(); ?>
 
 <article class="container">
 	<section class="news">
-		<h1 class="content-title">News</h1>
+		<h1 class="section-title">News</h1>
 		<?php if ( have_posts() ):?>
 			<ul class="news__article-list">
 			<?php while ( have_posts() ) : the_post(); ?>
