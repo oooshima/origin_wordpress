@@ -25,7 +25,9 @@
 			<ul class="global-nav">
 				<li class="global-nav__item">About</li>
 				<li class="global-nav__item">Works</li>
-				<li class="global-nav__item">News</li>
+				<li class="global-nav__item">
+					<a href="<?php echo esc_url(home_url( '/' )); ?>news">News</a>
+				</li>
 				<li class="global-nav__item">Contact</li>
 				<li class="global-nav__item">
 					<a href="<?php echo esc_url( 'https://www.instagram.com/' ); ?>">
