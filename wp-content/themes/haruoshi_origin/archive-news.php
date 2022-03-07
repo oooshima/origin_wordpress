@@ -12,13 +12,12 @@ get_header(); ?>
 		<h1 class="section-title">News</h1>
 		<?php if ( have_posts() ):?>
 			<ul class="news__article-list">
-			<?php while ( have_posts() ) : the_post(); ?>
-				<li class="news__article">
-					<time><?php the_time( 'Y.m.d' )?></time>
-					<p class="news__article-title"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></p>
-				</li>
-			<?php 
-			endwhile; ?>
+				<?php while ( have_posts() ) : the_post(); ?>
+					<li class="news__article">
+						<time><?php the_time( 'Y.m.d' )?></time>
+						<p class="news__article-title"><?php the_title(); ?></p>
+					</li>
+				<?php endwhile; ?>
 			</ul>
 		<?php endif; 
 		wp_reset_postdata(); 
