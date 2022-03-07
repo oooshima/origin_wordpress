@@ -5,7 +5,7 @@
 	inset: 0;
 	margin: $header-height auto 0px;
 	max-width: $contents-max-width;
-	width: calc(100% - 20px);
+	width: calc(100% - 20px); // 左右に10pxずつ余白を持たせるため
 }
 
 .section-wrapper {

@@ -12,7 +12,7 @@
 	width: 100%;
 	&__contents {
 		max-width: $contents-max-width;
-		width: calc(100% - 20px);
+		width: calc(100% - 20px); // 左右に10pxずつ余白を持たせるため
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
