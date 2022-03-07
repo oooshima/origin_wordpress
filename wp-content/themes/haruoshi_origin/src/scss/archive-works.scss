@@ -1,0 +1,20 @@
+@import "variables";
+@import "mixin";
+
+.works {
+	max-width: 640px;
+	width: calc(100% - 20px); // 左右に10pxずつ余白を持たせるため
+	margin: 0 auto;
+	&__article {
+		margin-bottom: 140px;
+	}
+	&__article-thumbnail {
+		display: flex;
+		justify-content: center;
+	}
+	&__article-title {
+		font-weight: bold;
+		margin-top: 30px;
+		margin-bottom: 10px;
+	}
+}
