@@ -22,11 +22,11 @@
 		padding: 15px;
 		display: flex;
 		align-items: center;
-		&__title {
-			margin-left: 88px;
-		}
 		&:first-of-type {
 			border-top: solid 1px $accent-color;
 		}
+	}
+	&__article-title {
+		margin-left: 88px;
 	}
 }
