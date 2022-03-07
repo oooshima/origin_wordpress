@@ -29,7 +29,7 @@ get_header(); ?>
 			</li>
 		<?php endwhile; endif; wp_reset_postdata(); ?>
 		</ul>
-		<p class="seemore-link"><a href="<?php echo esc_url(home_url( '/' ))?>news">See More</a></p>
+		<p class="seemore-link"><a href="<?php echo esc_url(home_url( '/' )); ?>news">See More</a></p>
 	</section>
 </article>
 
