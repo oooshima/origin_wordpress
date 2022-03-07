@@ -47,15 +47,6 @@ function enqueue_style() {
 			filemtime( get_stylesheet_directory() . '/dist/css/news.css' ),
 		);
 	endif;
-
-	// if ( get_post_type() === 'news' ) :
-	// 	wp_enqueue_style(
-	// 		'single-news',
-	// 		get_stylesheet_directory_uri() . '/dist/css/news.css',
-	// 		array(),
-	// 		filemtime( get_stylesheet_directory() . '/dist/css/news.css' ),
-	// 	);
-	// endif;
 }
 
 add_action( 'wp_enqueue_scripts', 'enqueue_style', 11 );
