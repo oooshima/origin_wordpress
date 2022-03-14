@@ -2,15 +2,24 @@
 @import "mixin";
 
 .works {
-	max-width: 640px;
-	width: calc(100% - 20px); // 左右に10pxずつ余白を持たせるため
+	max-width: $contents-max-width;
 	margin: 0 auto;
+	&__article-list {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+	&__article-list::after{
+		content:"";
+		display: block;
+		width: 32%;
+	}
 	&__article {
-		margin-bottom: 140px;
+		width: 32%;
+		margin-bottom: 24px;
 	}
 	&__article-thumbnail {
-		display: flex;
-		justify-content: center;
+		max-width: 100%;
 	}
 	&__article-title {
 		font-weight: bold;
