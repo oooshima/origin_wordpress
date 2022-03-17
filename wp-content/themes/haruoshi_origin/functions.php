@@ -57,6 +57,14 @@ function enqueue_style() {
 			filemtime( get_stylesheet_directory() . '/dist/css/archive-works.css' ),
 		);
 	endif;
+	if ( get_post_type() === 'works' ) :
+		wp_enqueue_style(
+			'works',
+			get_stylesheet_directory_uri() . '/dist/css/single-works.css',
+			array(),
+			filemtime( get_stylesheet_directory() . '/dist/css/single-works.css' ),
+		);
+	endif;
 }
 
 add_action( 'wp_enqueue_scripts', 'enqueue_style', 11 );
