@@ -7,18 +7,18 @@
 	&__article-list {
 		display: flex;
 		flex-wrap: wrap;
-		justify-content: space-between;
-	}
-	&__article-list::after{
-		content:"";
-		display: block;
-		width: 32%;
 	}
 	&__article {
-		width: 32%;
+		max-width: calc( (100% - 24px * 2) / 3 );
+		max-height: 172px;
 		margin-bottom: 24px;
+		margin-right: 24px;
+		&:nth-child(3n){
+			margin-right: 0;
+		}
 	}
 	&__article-thumbnail {
-		max-width: 100%;
+		width: 100%;
+		height: 100%;
 	}
 }
