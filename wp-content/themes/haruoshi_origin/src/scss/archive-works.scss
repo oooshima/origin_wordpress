@@ -20,6 +20,6 @@
 	&__article-thumbnail {
 		width: 100%;
 		height: 100%;
-		object-fit: cover;
+		object-fit: cover; //IE11では使えないよ
 	}
 }
