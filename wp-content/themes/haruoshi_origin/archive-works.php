@@ -22,8 +22,7 @@ get_header(); ?>
 					</li>
 				<?php endwhile; ?>
 			</ul>
-		<?php endif; 
-		wp_reset_postdata(); 
+		<?php endif;
 		?>
 	</section>
 </article>
