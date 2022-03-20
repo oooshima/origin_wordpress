@@ -16,7 +16,7 @@ get_header(); ?>
 	<p class="container__contents"><?php the_field( 'contents' ); ?></p>
 </article>
 <div class="back">
-	<a class="back__link" href="<?= get_post_type_archive_link( 'works' ); ?>">一覧に戻る</a>
+	<a href="<?= get_post_type_archive_link( 'works' ); ?>">一覧に戻る</a>
 </div>
 
 <?php get_footer(); ?>
