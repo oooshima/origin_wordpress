@@ -23,8 +23,11 @@
 	}
 }
 
-.back-link {
-	display: block;
-	text-align: center;
+.back {
 	margin-bottom: 240px;
+	text-align: center;
+	&__link {
+		display: inline-block;
+		border-bottom: solid 1px $main-color;
+	}
 }
