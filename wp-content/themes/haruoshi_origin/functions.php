@@ -49,7 +49,7 @@ function enqueue_style() {
 			filemtime( get_stylesheet_directory() . '/dist/css/archive-news.css' ),
 		);
 	endif;
-	if ( is_post_type_archive( 'works' ) ) :
+	if ( is_home() || is_post_type_archive( 'works' ) ) :
 		wp_enqueue_style(
 			'archive-works',
 			get_stylesheet_directory_uri() . '/dist/css/archive-works.css',
