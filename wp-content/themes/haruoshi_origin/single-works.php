@@ -13,7 +13,7 @@ get_header(); ?>
 	<?php if ( has_post_thumbnail() ): ?>
 		<img class="container__thumbnail" src="<?= the_post_thumbnail_url(); ?>" alt="thumbnail">
 	<?php endif; ?>
-	<p class="container__contents"><?php the_field( 'contents' ); ?></p>
+	<p class="container__contents"><?php the_content(); ?></p>
 </article>
 <div class="back">
 	<a href="<?= get_post_type_archive_link( 'works' ); ?>">一覧に戻る</a>
