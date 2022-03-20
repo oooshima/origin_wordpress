@@ -51,15 +51,15 @@ function enqueue_style() {
 	endif;
 	if ( is_post_type_archive( 'works' ) ) :
 		wp_enqueue_style(
-			'works',
+			'archive-works',
 			get_stylesheet_directory_uri() . '/dist/css/archive-works.css',
 			array(),
 			filemtime( get_stylesheet_directory() . '/dist/css/archive-works.css' ),
 		);
 	endif;
-	if ( get_post_type() === 'works' ) :
+	if ( is_singular('works') ) :
 		wp_enqueue_style(
-			'works',
+			'single-works',
 			get_stylesheet_directory_uri() . '/dist/css/single-works.css',
 			array(),
 			filemtime( get_stylesheet_directory() . '/dist/css/single-works.css' ),
