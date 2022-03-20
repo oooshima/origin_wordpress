@@ -17,6 +17,7 @@
 	&__thumbnail {
 		max-width: $contents-max-width;
 		width: calc(100% - 20px);
+		height: auto; // IE対応のために指定
 	}
 	&__contents {
 		margin: 60px 0;
