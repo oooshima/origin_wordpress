@@ -49,6 +49,14 @@ function enqueue_style() {
 			filemtime( get_stylesheet_directory() . '/dist/css/archive-news.css' ),
 		);
 	endif;
+	if ( is_post_type_archive( 'works' ) ) :
+		wp_enqueue_style(
+			'works',
+			get_stylesheet_directory_uri() . '/dist/css/archive-works.css',
+			array(),
+			filemtime( get_stylesheet_directory() . '/dist/css/archive-works.css' ),
+		);
+	endif;
 }
 
 add_action( 'wp_enqueue_scripts', 'enqueue_style', 11 );
@@ -57,12 +65,25 @@ add_action( 'wp_enqueue_scripts', 'enqueue_style', 11 );
  * カスタム投稿タイプの定義
  */
 function codex_custom_init() {
-	$args = array(
-		'public' => true,
-		'label'  => 'News',
-		'has_archive' => true
+	register_post_type(
+		'news',
+		array(
+			'public' => true,
+			'label' => 'News',
+			'has_archive' => true
+		)
 	);
-	register_post_type('news', $args);
+	register_post_type(
+		'works',
+		array(
+			'public' => true,
+			'label' => 'Works',
+			'has_archive' => true,
+			'supports' => array('title', 'editor', 'thumbnail')
+		)
+	);
 }
 
 add_action( 'init', 'codex_custom_init' );
+
+add_theme_support( 'post-thumbnails' );

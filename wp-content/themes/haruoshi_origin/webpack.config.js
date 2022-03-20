@@ -10,6 +10,7 @@ module.exports = {
 		footer: './src/scss/footer.scss',
 		home: './src/scss/home.scss',
 		'archive-news': './src/scss/archive-news.scss',
+		'archive-works': './src/scss/archive-works.scss',
 	},
 	//ソース元のjs
 	output: {
