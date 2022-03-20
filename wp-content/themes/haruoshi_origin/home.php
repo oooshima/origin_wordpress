@@ -16,7 +16,7 @@ get_header(); ?>
 		<?php
 		$works_query = new WP_Query( 
 			array( 
-				'post_type' => 'works' ,
+				'post_type' => 'works',
 				'posts_per_page' => 6,
 				'order' => 'ASC',
 				'orderby' => 'date'
