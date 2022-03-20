@@ -14,11 +14,13 @@ get_header(); ?>
 			<ul class="works__article-list">
 				<?php while ( have_posts() ) : the_post(); ?>
 					<li class="works__article">
-						<?php if ( has_post_thumbnail() ): ?>
-							<img class="works__article-thumbnail" src="<?= the_post_thumbnail_url(); ?>" alt="thumbnail">
-						<?php else: ?>
-							<img class="works__article-thumbnail" src="<?= esc_url( get_stylesheet_directory_uri() . '/img/dummy.jpg' ); ?>" alt="dummy-thumbnail">
-						<?php endif; ?>
+						<a href="<?php the_permalink() ?>">
+							<?php if ( has_post_thumbnail() ): ?>
+								<img class="works__article-thumbnail" src="<?= the_post_thumbnail_url(); ?>" alt="thumbnail">
+							<?php else: ?>
+								<img class="works__article-thumbnail" src="<?= esc_url( get_stylesheet_directory_uri() . '/img/dummy.jpg' ); ?>" alt="dummy-thumbnail">
+							<?php endif; ?>
+						</a>
 					</li>
 				<?php endwhile; ?>
 			</ul>

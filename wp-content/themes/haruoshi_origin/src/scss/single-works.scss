@@ -1,0 +1,31 @@
+@import "variables";
+@import "mixin";
+
+.container {
+	inset: 0;
+	margin: $header-height auto 60px;
+	max-width: $contents-max-width;
+	width: calc(100% - 20px);
+	&__title {
+		font-size: 24px;
+		font-weight: bold;
+	}
+	&__date {
+		display: block;
+		margin: 20px 0;
+	}
+	&__thumbnail {
+		max-width: $contents-max-width;
+		width: calc(100% - 20px);
+		height: auto; // IE対応のために指定
+	}
+	&__contents {
+		margin: 60px 0;
+	}
+}
+
+.back {
+	margin-bottom: 240px;
+	text-align: center;
+	text-decoration: underline;
+}
