@@ -12,8 +12,6 @@ get_header(); ?>
 	<p class="container__date"><?php the_time( 'Y/m/d' ); ?></p>
 	<?php if ( has_post_thumbnail() ): ?>
 		<img class="container__thumbnail" src="<?= the_post_thumbnail_url(); ?>" alt="thumbnail">
-	<?php else: ?>
-		<img class="container__thumbnail" src="<?= esc_url( get_stylesheet_directory_uri() . '/img/dummy.jpg' ); ?>" alt="dummy-thumbnail">
 	<?php endif; ?>
 	<p class="container__contents"><?php the_field( 'contents' ); ?></p>
 </article>
