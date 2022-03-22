@@ -23,7 +23,9 @@
 		<h1 class="site-header__logo">My Work</h1>
 		<nav>
 			<ul class="global-nav">
-				<li class="global-nav__item">About</li>
+				<li class="global-nav__item">
+					<a href="<?= home_url('/about/'); ?>">About</a>
+				</li>
 				<li class="global-nav__item">
 					<a href="<?= get_post_type_archive_link( 'works' ); ?>">Works</a>
 				</li>
