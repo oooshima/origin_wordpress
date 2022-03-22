@@ -65,6 +65,14 @@ function enqueue_style() {
 			filemtime( get_stylesheet_directory() . '/dist/css/single-works.css' ),
 		);
 	endif;
+	if ( is_page('about') ) :
+		wp_enqueue_style(
+			'my-about', // aboutにするとデフォルトのものが読み込まれてしまうため
+			get_stylesheet_directory_uri() . '/dist/css/page-about.css',
+			array(),
+			filemtime( get_stylesheet_directory() . '/dist/css/page-about.css' ),
+		);
+	endif;
 }
 
 add_action( 'wp_enqueue_scripts', 'enqueue_style', 11 );
