@@ -1,24 +1,49 @@
 @import "variables";
 @import "mixin";
 
+/* pc and smartPhone */
 .works {
   max-width: $contents-max-width;
-  &__article-list {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  &__article {
-    width: calc((100% - 24px * 2) / 3);
-    aspect-ratio: 264 / 172;
-    margin-bottom: 24px;
-    margin-right: 24px;
-    &:nth-of-type(3n) {
-      margin-right: 0;
-    }
-  }
   &__article-thumbnail {
     width: 100%;
     height: 100%;
     object-fit: cover; //IE11では使えないよ
+  }
+}
+
+/* pc */
+@media screen and (min-width: 769px) {
+  .works {
+    &__article-list {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    &__article {
+      width: calc((100% - 24px * 2) / 3);
+      aspect-ratio: 264 / 172;
+      margin-bottom: 24px;
+      margin-right: 24px;
+      &:nth-of-type(3n) {
+        margin-right: 0;
+      }
+      &:nth-of-type(n + 4) {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+/* smartPhone */
+@media screen and (max-width: 768px) {
+  .works {
+    &__article {
+      margin: 0 auto 24px;
+      max-width: 346px;
+      width: calc(100% - 20px); // 左右に10pxずつ余白を持たせるため
+      aspect-ratio: 346 / 226;
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
   }
 }
