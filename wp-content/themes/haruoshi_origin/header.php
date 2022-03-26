@@ -21,7 +21,9 @@
 <body>
     <header class="site-header">
         <div class="site-header__contents">
-            <h1 class="site-header__logo">My Work</h1>
+            <h1 class="site-header__logo">
+                <a href="<?= home_url(); ?>">My Work</a>
+            </h1>
             <nav>
                 <ul class="global-nav">
                     <li class="global-nav__item">
