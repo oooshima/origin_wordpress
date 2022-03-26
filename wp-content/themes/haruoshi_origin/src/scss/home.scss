@@ -1,9 +1,9 @@
 @import "variables";
 @import "mixin";
 
+/* pc and smartPhone */
 .top-banner {
   width: 100%;
-  aspect-ratio: 1280 / 420;
   margin-bottom: 80px;
   &__img {
     width: 100%;
@@ -16,4 +16,18 @@
   margin-top: 50px;
   border-bottom: solid 1px $main-color;
   display: inline-block;
+}
+
+/* pc */
+@media screen and (min-width: 769px) {
+  .top-banner {
+    aspect-ratio: 1280 / 420;
+  }
+}
+
+/* smartPhone */
+@media screen and (max-width: 768px) {
+  .top-banner {
+    aspect-ratio: 375 / 420;
+  }
 }
