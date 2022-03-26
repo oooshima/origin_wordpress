@@ -1,11 +1,11 @@
 @import "variables";
 @import "mixin";
 
+/* pc and smartPhone */
 .site-header {
   background: $base-color;
   position: fixed;
   inset: 0;
-  height: $header-height;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -13,9 +13,6 @@
   &__contents {
     max-width: $contents-max-width;
     width: calc(100% - 20px); // 左右に10pxずつ余白を持たせるため
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
   }
   &__logo {
     font-size: 28px;
@@ -25,7 +22,6 @@
 .global-nav {
   display: flex;
   &__item {
-    margin-right: 30px;
     &:last-of-type {
       margin-right: 0;
     }
@@ -33,5 +29,43 @@
   &__image {
     width: auto;
     height: 20px;
+  }
+}
+
+/* pc */
+@media screen and (min-width: 769px) {
+  .site-header {
+    height: $header-height;
+    &__contents {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  .global-nav {
+    &__item {
+      margin-right: 30px;
+    }
+  }
+}
+
+/* smartPhone */
+@media screen and (max-width: 768px) {
+  .site-header {
+    height: $header-height-sp;
+    &__contents {
+      text-align: center;
+    }
+    &__logo {
+      margin-bottom: 10px;
+    }
+  }
+
+  .global-nav {
+    justify-content: center;
+    &__item {
+      margin-right: 20px;
+    }
   }
 }
