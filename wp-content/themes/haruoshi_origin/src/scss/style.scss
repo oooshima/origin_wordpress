@@ -1,6 +1,7 @@
 @import "destyle";
 @import "variables";
 
+/* pc and smartPhone */
 html {
   font-family: Arial;
   color: $main-color;
@@ -10,11 +11,6 @@ html {
 body {
   background-color: $base-color;
   position: relative;
-}
-
-.main {
-  margin-top: $header-height;
-  min-height: calc(100vh - $header-height - $footer-height);
 }
 
 .container {
@@ -28,10 +24,37 @@ body {
   font-size: 24px;
   font-weight: bold;
   text-align: center;
-  margin-bottom: 65px;
 }
 
 .section-wrapper {
   margin-bottom: 130px;
   text-align: center;
+}
+
+/* pc */
+@media screen and (min-width: 769px) {
+  .main {
+    margin-top: $header-height;
+    min-height: calc(100vh - $header-height - $footer-height);
+  }
+
+  .section-title {
+    margin-bottom: 65px;
+  }
+}
+
+/* smartPhone */
+@media screen and (max-width: 768px) {
+  .main {
+    margin-top: $header-height-sp;
+    min-height: calc(100vh - $header-height-sp - $footer-height);
+  }
+
+  .section-title {
+    margin-bottom: 40px;
+  }
+
+  .section-wrapper-sp {
+    margin-top: $header-height-sp + 52px;
+  }
 }
