@@ -2,36 +2,36 @@
 @import "variables";
 
 html {
-	font-family: Arial;
-	color: $main-color;
-	font-size: 14px;
+  font-family: Arial;
+  color: $main-color;
+  font-size: 14px;
 }
 
 body {
-	background-color: $base-color;
-	position: relative;
+  background-color: $base-color;
+  position: relative;
 }
 
 .main {
-	margin-top: $header-height;
-	min-height: calc(100vh - $header-height - $footer-height);
+  margin-top: $header-height;
+  min-height: calc(100vh - $header-height - $footer-height);
 }
 
 .container {
-	inset: 0;
-	margin: 0 auto;
-	max-width: $contents-max-width;
-	width: calc(100% - 20px); // 左右に10pxずつ余白を持たせるため
+  inset: 0;
+  margin: 0 auto;
+  max-width: $contents-max-width;
+  width: calc(100% - 20px); // 左右に10pxずつ余白を持たせるため
 }
 
 .section-title {
-	font-size: 24px;
-	font-weight: bold;
-	text-align: center;
-	margin-bottom: 65px;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 65px;
 }
 
 .section-wrapper {
-	margin-bottom: 130px;
-	text-align: center;
+  margin-bottom: 130px;
+  text-align: center;
 }
