@@ -2,10 +2,10 @@
 @import "mixin";
 
 .site-header {
-  height: $header-height;
   background: $base-color;
   position: fixed;
   inset: 0;
+  height: $header-height;
   display: flex;
   align-items: center;
   justify-content: center;

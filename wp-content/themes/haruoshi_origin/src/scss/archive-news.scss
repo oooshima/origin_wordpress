@@ -3,10 +3,10 @@
 
 .news {
   &__article {
-    display: flex;
-    align-items: center;
     border-bottom: solid 1px $accent-color;
     padding: 15px;
+    display: flex;
+    align-items: center;
     @include mq-sp {
       display: block;
       text-align: left;
