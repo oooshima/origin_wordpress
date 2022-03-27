@@ -29,9 +29,9 @@
       &:nth-of-type(3n + 1):nth-last-of-type(-n + 3),
       &:nth-of-type(3n + 1):nth-last-of-type(-n + 3) ~ & {
         margin-bottom: 24px;
-      }
-      &:last-of-type {
-        margin-bottom: 0;
+        &:last-of-type {
+          margin-bottom: 0;
+        }
       }
     }
   }
