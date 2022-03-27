@@ -1,35 +1,24 @@
 @import "variables";
 @import "mixin";
 
-/* pc and smartPhone */
 .news {
   &__article {
+    display: flex;
+    align-items: center;
+    @include mq-sp {
+      display: block;
+      text-align: left;
+    }
     border-bottom: solid 1px $accent-color;
     padding: 15px;
     &:first-of-type {
       border-top: solid 1px $accent-color;
     }
   }
-}
-
-/* pc */
-@media screen and (min-width: 769px) {
-  .news {
-    &__article {
-      display: flex;
-      align-items: center;
-    }
-    &__article-title {
-      margin-left: 88px;
-    }
-  }
-}
-
-/* smartPhone */
-@media screen and (max-width: 768px) {
-  .news {
-    &__article {
-      text-align: left;
+  &__article-title {
+    margin-left: 88px;
+    @include mq-sp {
+      margin-left: 0;
     }
   }
 }
