@@ -9,7 +9,7 @@
 
 get_header(); ?>
 
-<article class="container section-wrapper-sp">
+<article class="container">
     <h1 class="section-title">About</h1>
     <div class="container__contents"><?php the_content(); ?></div>
 </article>

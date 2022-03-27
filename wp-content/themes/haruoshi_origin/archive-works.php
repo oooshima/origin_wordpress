@@ -8,7 +8,7 @@
 get_header(); ?>
 
 <article class="container">
-    <section class="works section-wrapper section-wrapper-sp">
+    <section class="works section-wrapper">
         <h1 class="section-title">Works</h1>
         <?php if ( have_posts() ):?>
         <ul class="works__article-list">
