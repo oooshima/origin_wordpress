@@ -19,6 +19,10 @@ body {
   @include mq-sp {
     margin-top: calc($header-height-sp + 52px);
     min-height: calc(100vh - $header-height-sp - $footer-height - 52px);
+    &--top-page {
+      margin-top: $header-height-sp;
+      min-height: calc(100vh - $header-height-sp - $footer-height);
+    }
   }
 }
 

@@ -49,4 +49,5 @@
             </nav>
         </div>
     </header>
-    <main class="main" role="main">
+    <?php $classNameOfMain = is_home() ? "main main--top-page" : "main"; ?>
+    <main class="<?= $classNameOfMain ?>" role="main">
