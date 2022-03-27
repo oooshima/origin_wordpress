@@ -3,10 +3,11 @@
 
 .works {
   max-width: $contents-max-width;
-  @include mq(pc) {
-    &__article-list {
-      display: flex;
-      flex-wrap: wrap;
+  &__article-list {
+    display: flex;
+    flex-wrap: wrap;
+    @include mq-sp {
+      display: block;
     }
   }
   &__article {
@@ -14,16 +15,17 @@
     aspect-ratio: 264 / 172;
     margin-bottom: 24px;
     margin-right: 24px;
-    @include mq(pc) {
-      &:nth-of-type(3n) {
-        margin-right: 0;
-      }
+    &:nth-of-type(3n) {
+      margin-right: 0;
     }
-    @include mq(sp) {
+    @include mq-sp {
       margin: 0 auto 24px;
       max-width: 346px;
       width: calc(100% - 20px); // 左右に10pxずつ余白を持たせるため
       aspect-ratio: 346 / 226;
+      &:nth-of-type(3n) {
+        margin-right: auto;
+      }
       &:last-of-type {
         margin-bottom: 0;
       }
