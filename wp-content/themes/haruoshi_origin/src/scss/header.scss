@@ -10,22 +10,38 @@
   align-items: center;
   justify-content: center;
   width: 100%;
+  @include mq-sp {
+    height: $header-height-sp;
+  }
   &__contents {
     max-width: $contents-max-width;
     width: calc(100% - 20px); // 左右に10pxずつ余白を持たせるため
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @include mq-sp {
+      display: block;
+      text-align: center;
+    }
   }
   &__logo {
     font-size: 28px;
+    @include mq-sp {
+      margin-bottom: 10px;
+    }
   }
 }
 
 .global-nav {
   display: flex;
+  @include mq-sp {
+    justify-content: center;
+  }
   &__item {
     margin-right: 30px;
+    @include mq-sp {
+      margin-right: 20px;
+    }
     &:last-of-type {
       margin-right: 0;
     }

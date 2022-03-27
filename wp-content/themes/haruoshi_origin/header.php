@@ -15,13 +15,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ORIGIN</title>
     <meta name="description" content="haruoshiの練習サイト">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
     <?php wp_head(); ?>
 </head>
 
 <body>
     <header class="site-header">
         <div class="site-header__contents">
-            <h1 class="site-header__logo">My Work</h1>
+            <h1 class="site-header__logo">
+                <a href="<?= home_url(); ?>">My Work</a>
+            </h1>
             <nav>
                 <ul class="global-nav">
                     <li class="global-nav__item">
@@ -45,4 +49,5 @@
             </nav>
         </div>
     </header>
-    <main class="main" role="main">
+    <?php $classNameOfMain = is_home() ? "main main--top-page" : "main"; ?>
+    <main class="<?= $classNameOfMain ?>" role="main">

@@ -1,5 +1,6 @@
 @import "destyle";
 @import "variables";
+@import "mixin";
 
 html {
   font-family: Arial;
@@ -15,6 +16,14 @@ body {
 .main {
   margin-top: $header-height;
   min-height: calc(100vh - $header-height - $footer-height);
+  @include mq-sp {
+    margin-top: calc($header-height-sp + 52px);
+    min-height: calc(100vh - $header-height-sp - $footer-height - 52px);
+    &--top-page {
+      margin-top: $header-height-sp;
+      min-height: calc(100vh - $header-height-sp - $footer-height);
+    }
+  }
 }
 
 .container {
@@ -22,6 +31,9 @@ body {
   margin: 0 auto;
   max-width: $contents-max-width;
   width: calc(100% - 20px); // 左右に10pxずつ余白を持たせるため
+  @include mq-sp {
+    width: calc(100% - 30px); // 左右に15pxずつ余白を持たせるため
+  }
 }
 
 .section-title {
@@ -29,6 +41,9 @@ body {
   font-weight: bold;
   text-align: center;
   margin-bottom: 65px;
+  @include mq-sp {
+    margin-bottom: 40px;
+  }
 }
 
 .section-wrapper {

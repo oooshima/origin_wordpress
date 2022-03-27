@@ -7,11 +7,18 @@
     padding: 15px;
     display: flex;
     align-items: center;
+    @include mq-sp {
+      display: block;
+      text-align: left;
+    }
     &:first-of-type {
       border-top: solid 1px $accent-color;
     }
   }
   &__article-title {
     margin-left: 88px;
+    @include mq-sp {
+      margin-left: 0;
+    }
   }
 }

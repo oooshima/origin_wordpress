@@ -6,6 +6,9 @@
   margin: $header-height auto 60px;
   max-width: $contents-max-width;
   width: calc(100% - 20px);
+  @include mq-sp {
+    margin: $header-height-sp auto 60px;
+  }
   &__title {
     font-size: 24px;
     font-weight: bold;

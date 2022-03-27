@@ -7,11 +7,11 @@
 
 get_header(); ?>
 
-<section class="top-banner section-wrapper">
-    <img class="top-banner__img" src="<?= esc_url( get_stylesheet_directory_uri() . '/img/bird.jpg' ); ?>"
-        alt="top-banner">
-</section>
 <article class="container">
+    <section class="top-banner section-wrapper">
+        <img class="top-banner__img" src="<?= esc_url( get_stylesheet_directory_uri() . '/img/bird.jpg' ); ?>"
+            alt="top-banner">
+    </section>
     <section class="works section-wrapper">
         <h1 class="section-title">Works</h1>
         <?php
