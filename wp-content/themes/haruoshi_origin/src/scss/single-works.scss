@@ -5,6 +5,10 @@
   inset: 0;
   max-width: $contents-max-width;
   width: calc(100% - 20px);
+  margin: $header-height auto 60px;
+  @include mq-sp {
+    margin: $header-height-sp auto 60px;
+  }
   &__title {
     font-size: 24px;
     font-weight: bold;
@@ -27,18 +31,4 @@
   margin-bottom: 240px;
   text-align: center;
   text-decoration: underline;
-}
-
-/* pc */
-@media screen and (min-width: 769px) {
-  .container {
-    margin: $header-height auto 60px;
-  }
-}
-
-/* smartPhone */
-@media screen and (max-width: 768px) {
-  .container {
-    margin: $header-height-sp + 52px auto 60px;
-  }
 }
