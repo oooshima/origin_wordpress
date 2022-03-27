@@ -5,12 +5,12 @@
   &__article {
     display: flex;
     align-items: center;
+    border-bottom: solid 1px $accent-color;
+    padding: 15px;
     @include mq-sp {
       display: block;
       text-align: left;
     }
-    border-bottom: solid 1px $accent-color;
-    padding: 15px;
     &:first-of-type {
       border-top: solid 1px $accent-color;
     }

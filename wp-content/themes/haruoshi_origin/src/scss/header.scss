@@ -3,9 +3,6 @@
 
 .site-header {
   height: $header-height;
-  @include mq-sp {
-    height: $header-height-sp;
-  }
   background: $base-color;
   position: fixed;
   inset: 0;
@@ -13,6 +10,9 @@
   align-items: center;
   justify-content: center;
   width: 100%;
+  @include mq-sp {
+    height: $header-height-sp;
+  }
   &__contents {
     max-width: $contents-max-width;
     width: calc(100% - 20px); // 左右に10pxずつ余白を持たせるため
