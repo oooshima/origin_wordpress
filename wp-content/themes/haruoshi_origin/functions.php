@@ -109,11 +109,11 @@ add_theme_support('post-thumbnails');
 
 if( function_exists('acf_add_local_field_group') ):
 acf_add_local_field_group(array(
-	'key' => 'group_62261c6bd16b5',
+	'key' => 'works',
 	'title' => 'Works',
 	'fields' => array(
 		array(
-			'key' => 'field_62404882234c7',
+			'key' => 'works_artist',
 			'label' => 'artist',
 			'name' => 'artist_name',
 			'type' => 'text',
