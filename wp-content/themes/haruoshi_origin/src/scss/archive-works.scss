@@ -19,11 +19,12 @@
       margin-right: 0;
     }
     @include mq-sp {
+      margin: 0 auto 24px;
       max-width: 346px;
       width: calc(100% - 20px); // 左右に10pxずつ余白を持たせるため
       aspect-ratio: 346 / 226;
-      &:nth-of-type(n) {
-        margin: 0 auto 24px;
+      &:nth-of-type(3n) {
+        margin-right: auto;
       }
       &:last-of-type {
         margin-bottom: 0;
