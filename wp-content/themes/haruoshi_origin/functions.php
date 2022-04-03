@@ -43,7 +43,7 @@ function enqueue_style()
 			filemtime(get_stylesheet_directory() . '/dist/css/home.css')
 		);
 	endif;
-	if (is_home() || is_post_type_archive('news')) :
+	if (is_home() || is_post_type_archive('news') || is_tax('news_tag')) :
 		wp_enqueue_style(
 			'news',
 			get_stylesheet_directory_uri() . '/dist/css/archive-news.css',
@@ -104,6 +104,42 @@ function codex_custom_init()
 }
 
 add_action('init', 'codex_custom_init');
+
+/**
+ * タクソノミーの定義
+ */
+function taxonomy_writer() {
+  $name = __('タグ', 'my-theme');
+
+  $labels = [
+      'name' => $name,
+      'manu_name' => $name,
+      'singular_name' => $name,
+      'not_found' => $name . 'は見つかりませんでした',
+      'search_items' => $name . 'を検索',
+      'popular_items' => $name . 'の人気の項目',
+      'all_items' => $name . '一覧',
+      'parent_item' => null,
+      'parent_item_colon' => null,
+      'edit_item'=> $name . 'を編集',
+      'update_item' => $name . 'をアップデート',
+      'add_new_item' => $name . 'を新規追加' ,
+      'new_item_name' => '新しい' . $name . 'の名前',
+      'separate_items_with_commas' => '項目をコンマで区切ってください',
+      'add_or_remove_items' => '項目の追加または削除',
+      'choose_from_most_used' => 'よく使われている項目から選択',
+  ];
+
+  $args = [
+	  'labels' => $labels,
+	  'show_admin_column' => true,
+	  'show_in_rest' => true, //Gutenbergの中で表示するために必須
+  ];
+
+  register_taxonomy('news_tag','news', $args);
+}
+
+add_action( 'init', 'taxonomy_writer' );
 
 add_theme_support('post-thumbnails');
 
