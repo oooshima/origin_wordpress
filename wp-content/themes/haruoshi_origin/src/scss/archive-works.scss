@@ -49,9 +49,10 @@
 .page-numbers {
   font-size: 20px;
   margin-right: 14px;
-  &:last-of-type {
-    margin-right: 0;
-  }
+}
+
+.next {
+  margin-right: 0;
 }
 
 .current {
