@@ -77,7 +77,7 @@ function enqueue_style()
 	endif;
 	if (is_page('contact')) :
 		wp_enqueue_style(
-			'contact', // aboutにするとデフォルトのものが読み込まれてしまうため
+			'contact',
 			get_stylesheet_directory_uri() . '/dist/css/page-contact.css',
 			array(),
 			filemtime(get_stylesheet_directory() . '/dist/css/page-contact.css')
