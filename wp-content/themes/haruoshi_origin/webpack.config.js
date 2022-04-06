@@ -10,6 +10,7 @@ module.exports = {
 		footer: './src/scss/footer.scss',
 		home: './src/scss/home.scss',
 		'page-about': './src/scss/page-about.scss',
+		'page-contact': './src/scss/page-contact.scss',
 		'archive-news': './src/scss/archive-news.scss',
 		'archive-works': './src/scss/archive-works.scss',
 		'single-works': './src/scss/single-works.scss',

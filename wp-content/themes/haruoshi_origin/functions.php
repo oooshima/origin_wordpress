@@ -75,6 +75,14 @@ function enqueue_style()
 			filemtime(get_stylesheet_directory() . '/dist/css/page-about.css')
 		);
 	endif;
+	if (is_page('contact')) :
+		wp_enqueue_style(
+			'contact', // aboutにするとデフォルトのものが読み込まれてしまうため
+			get_stylesheet_directory_uri() . '/dist/css/page-contact.css',
+			array(),
+			filemtime(get_stylesheet_directory() . '/dist/css/page-contact.css')
+		);
+	endif;
 }
 
 add_action('wp_enqueue_scripts', 'enqueue_style', 11);
@@ -202,3 +210,20 @@ function no_screen_reader_text($template){
         return $template;
     }
 add_action( 'navigation_markup_template', 'no_screen_reader_text' );
+
+/**
+ * Contact Form 7のCSSをcontactページ以外で動作させない
+ */
+function my_contact_enqueue_scripts(){
+	wp_deregister_script('contact-form-7');
+	wp_deregister_style('contact-form-7');
+	if (is_page('contact')) {
+		if (function_exists( 'wpcf7_enqueue_scripts')) {
+        	wpcf7_enqueue_scripts();
+		}
+	if ( function_exists( 'wpcf7_enqueue_styles' ) ) {
+		wpcf7_enqueue_styles();
+	}
+}
+}
+add_action( 'wp_enqueue_scripts', 'my_contact_enqueue_scripts');
