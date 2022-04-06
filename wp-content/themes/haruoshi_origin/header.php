@@ -37,7 +37,9 @@
                     <li class="global-nav__item">
                         <a href="<?= get_post_type_archive_link( 'news' ); ?>">News</a>
                     </li>
-                    <li class="global-nav__item">Contact</li>
+                    <li class="global-nav__item">
+                        <a href="<?= home_url('/contact/'); ?>">Contact</a>
+                    </li>
                     <li class="global-nav__item">
                         <a href="<?= esc_url( 'https://www.instagram.com/' ); ?>">
                             <img class="global-nav__image"
