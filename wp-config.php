@@ -85,6 +85,8 @@ define( 'WP_DEBUG', false );
 
 /* カスタム値は、この行と「編集が必要なのはここまでです」の行の間に追加してください。 */
 
+/* contact form 7で勝手にpタグが挿入されるのを防ぐ */
+define ('WPCF7_AUTOP', false);
 
 
 /* 編集が必要なのはここまでです ! WordPress でのパブリッシングをお楽しみください。 */
