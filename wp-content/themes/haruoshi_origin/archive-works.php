@@ -26,11 +26,12 @@ get_header(); ?>
             </li>
             <?php endwhile; ?>
         </ul>
-        <?php the_posts_pagination(array(
-            'prev_text' => '',
-            'next_text' => ''
-        )); ?>
-        <?php endif;?>
+        <?php
+        if (function_exists("pagination")) {
+            pagination($additional_loop->max_num_pages);
+        }
+        endif;
+        ?>
     </section>
 </article>
 

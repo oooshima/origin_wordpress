@@ -202,3 +202,55 @@ function no_screen_reader_text($template){
         return $template;
     }
 add_action( 'navigation_markup_template', 'no_screen_reader_text' );
+
+/**
+ * ページネーション
+ */
+function pagination($pages = '')
+{
+     global $paged; //現在のページ値
+     if(empty($paged)) $paged = 1; //デフォルトのページ
+
+     if($pages == '') {
+         global $wp_query;
+         $pages = $wp_query->max_num_pages;//全ページ数を取得
+         if(!$pages) { //全ページ数が空の場合は、１とする
+             $pages = 1;
+         }
+     }
+
+     if(1 != $pages) { //全ページが１でない場合はページネーションを表示する
+		echo "<div class=\"pager\">\n";
+		echo "<ul class=\"pagination\">\n";
+        if($paged > 1) {
+			echo "<li class=\"pre\"><a href='".get_pagenum_link($paged - 1)."'><span class=\"pre__text\"></span></a></li>\n";
+		}
+		if($paged > 2 && $pages > 3) {
+			echo "<li><a href='".get_pagenum_link(1)."'><span class=\"page-numbers\">1</span></a></li>\n";
+		}
+		if($paged > 3 && $pages > 4) {
+			echo "<li><span class=\"dot-line\"></span></li>\n";
+		}
+        for ($i=1; $i <= $pages; $i++) {
+        	if (1 != $pages) {
+				$range = 1;
+				if(($paged == 1 || $paged == $pages) && $pages > 2){ //最初と最後のページでだけ前後のページ数を変える
+					$range = 2;
+				}
+				$showitems = ($range * 2)+1;
+				if(!($i >= $paged+$range+1 || $i <= $paged-$range-1) || $pages <= $showitems){
+            		echo ($paged == $i)? "<li><a class=\"active\" href='".get_pagenum_link($i)."'><span class=\"page-numbers\">".$i."</span></a></li>\n":"<li><a href='".get_pagenum_link($i)."'><span class=\"page-numbers\">".$i."</span></a></li>\n";
+				}
+            }
+        }
+		if($paged < $pages-2 && $pages > 4) {
+			echo "<li><span class=\"dot-line\"></span></li>\n";
+		}
+		if($paged < $pages-1 && $pages > 3) {
+			echo "<li><a href='".get_pagenum_link($pages)."'><span class=\"page-numbers\">$pages</span></a></li>\n";
+		}
+		if ($paged < $pages) echo "<li class=\"next\"><a href=\"".get_pagenum_link($paged + 1)."\"><span class=\"next__text\"></span></a></li>\n";
+		echo "</ul>\n";
+		echo "</div>\n";
+     }
+}
