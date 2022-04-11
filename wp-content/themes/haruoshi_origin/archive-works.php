@@ -29,8 +29,7 @@ get_header(); ?>
         <?php the_posts_pagination(array(
             'prev_text' => '<',
             'next_text' => '>'
-        )); 
-        wp_reset_postdata();?>
+        )); ?>
         <?php endif;?>
     </section>
 </article>
