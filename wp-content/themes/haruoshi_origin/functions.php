@@ -191,19 +191,6 @@ acf_add_local_field_group(array(
 endif;
 
 /**
- * ページネーションのスクリーンリーダー用テキストを表示しない
- */
-function no_screen_reader_text($template){
-    $template = '
-        <nav class="navigation %1$s" role="navigation">
-            <div class="nav-links">%3$s</div>
-        </nav>';
-
-        return $template;
-    }
-add_action( 'navigation_markup_template', 'no_screen_reader_text' );
-
-/**
  * ページネーション
  */
 function pagination($pages = '')
