@@ -27,8 +27,8 @@ get_header(); ?>
             <?php endwhile; ?>
         </ul>
         <?php the_posts_pagination(array(
-            'prev_text' => '<',
-            'next_text' => '>'
+            'prev_text' => '',
+            'next_text' => ''
         )); ?>
         <?php endif;?>
     </section>

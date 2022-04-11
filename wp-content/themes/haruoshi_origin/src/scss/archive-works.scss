@@ -55,6 +55,14 @@
   margin-right: 0;
 }
 
+.next::after {
+  content: ">";
+}
+
+.prev::after {
+  content: "<";
+}
+
 .current {
   position: relative;
 }
