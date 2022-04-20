@@ -43,7 +43,7 @@ function enqueue_style()
 			filemtime(get_stylesheet_directory() . '/dist/css/home.css')
 		);
 	endif;
-	if (is_home() || is_post_type_archive('news') || is_tax('news_tag')) :
+	if (is_home() || is_post_type_archive('news')) :
 		wp_enqueue_style(
 			'news',
 			get_stylesheet_directory_uri() . '/dist/css/archive-news.css',
