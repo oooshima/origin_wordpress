@@ -193,23 +193,23 @@ endif;
 /**
  * ページネーション
  */
-function pagination($pages = '')
+function pagination($pages = 1, $range = 1)
 {
-     global $paged; //現在のページ値
-     if(empty($paged)) $paged = 1; //デフォルトのページ
+	$pages = (int)$pages; //float型で渡ってくるので明示的にint型 へ
+	$paged = get_query_var('paged') ? get_query_var('paged') : 1;
 
-     if($pages == '') {
-         global $wp_query;
-         $pages = $wp_query->max_num_pages;//全ページ数を取得
-         if(!$pages) { //全ページ数が空の場合は、１とする
-             $pages = 1;
-         }
-     }
+	// 1ページしかない時
+	if ($pages === 1) {
+		return;
+	}
 
-     if(1 != $pages) { //全ページが１でない場合はページネーションを表示する
+	if(1 != $pages) { //全ページが１でない場合はページネーションを表示する
+		// 最初と最後のページにいるときは前後3ページを表示
+		$range = ($paged == 1 || $paged == $pages) ? 2 : 1;
+		
 		echo '<div class="pager">';
 		echo '<ul class="pagination">';
-        if($paged > 1) {
+		if($paged > 1) {
 			echo '<li class="pre"><a href="'.get_pagenum_link($paged - 1).'"><span class="pre__text"></span></a></li>';
 		}
 		if($paged > 2 && $pages > 3) {
@@ -218,26 +218,25 @@ function pagination($pages = '')
 		if($paged > 3 && $pages > 4) {
 			echo '<li><span class="dot-line"></span></li>';
 		}
-        for ($i=1; $i <= $pages; $i++) {
-        	if (1 != $pages) {
-				$range = 1;
-				if(($paged == 1 || $paged == $pages) && $pages > 2){ //最初と最後のページでだけ前後のページ数を変える
-					$range = 2;
+		for ($i=1; $i <= $pages; $i++) {
+				if($i <= $paged + $range && $i >= $paged - $range){ // $paged ± $range 以内であればページ番号を出力
+					if ($paged == $i) {
+						echo '<li><a class="active" href="'.get_pagenum_link($i).'"><span class="page-numbers">'.$i.'</span></a></li>';
+					} else {
+						echo '<li><a href="'.get_pagenum_link($i).'"><span class="page-numbers">'.$i.'</span></a></li>';
+					}
 				}
-				$showitems = ($range * 2)+1;
-				if(!($i >= $paged+$range+1 || $i <= $paged-$range-1) || $pages <= $showitems){
-            		echo ($paged == $i)? '<li><a class="active" href="'.get_pagenum_link($i).'"><span class="page-numbers">'.$i.'</span></a></li>':'<li><a href="'.get_pagenum_link($i).'"><span class="page-numbers">'.$i.'</span></a></li>';
-				}
-            }
-        }
-		if($paged < $pages-2 && $pages > 4) {
-			echo '<li><span class="dot-line"></span></li>';
 		}
-		if($paged < $pages-1 && $pages > 3) {
-			echo '<li><a href="'.get_pagenum_link($pages).'"><span class="page-numbers">'.$pages.'</span></a></li>';
-		}
-		if ($paged < $pages) echo '<li class="next"><a href="'.get_pagenum_link($paged + 1).'"><span class="next__text"></span></a></li>';
-		echo '</ul>';
-		echo '</div>';
-     }
+	}
+	if($paged < $pages-2 && $pages > 4) {
+		echo '<li><span class="dot-line"></span></li>';
+	}
+	if($paged < $pages-1 && $pages > 3) {
+		echo '<li><a href="'.get_pagenum_link($pages).'"><span class="page-numbers">'.$pages.'</span></a></li>';
+	}
+	if ($paged < $pages) {
+		echo '<li class="next"><a href="'.get_pagenum_link($paged + 1).'"><span class="next__text"></span></a></li>';
+	}
+	echo '</ul>';
+	echo '</div>';
 }
