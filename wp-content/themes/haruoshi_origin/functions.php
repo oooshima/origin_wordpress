@@ -240,3 +240,19 @@ function pagination($pages = 1, $range = 1)
 	echo '</ul>';
 	echo '</div>';
 }
+
+add_action('pre_get_posts', 'change_posts_per_page');
+
+/**
+ * 表示する投稿数
+ */
+function change_posts_per_page($query)
+{
+	if (is_admin() || !$query->is_main_query()) {
+		return;
+	}
+	if (is_post_type_archive('works')) {
+		$query->set('posts_per_page', 6);
+	}
+	return;
+}
