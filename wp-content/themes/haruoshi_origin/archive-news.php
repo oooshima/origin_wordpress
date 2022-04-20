@@ -17,7 +17,7 @@ get_header(); ?>
             $term_slug = $term_object->slug; ?>
         <ul class="news__tag-list">
             <?php foreach( $taxonomy_terms as $term ):
-                $classNameOfList = $term->slug === $term_slug ? "news__tag news__tag--select" : "news__tag"; ?>
+                $classNameOfList = $term->slug === $term_slug ? "news__tag news__tag--selected" : "news__tag"; ?>
             <li class="<?= $classNameOfList ?>">
                 <a
                     href="<?= get_post_type_archive_link("news") . "?" . http_build_query(["news_tag" => $term->slug]); ?>">
