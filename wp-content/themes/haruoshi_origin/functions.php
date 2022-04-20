@@ -207,16 +207,16 @@ function pagination($pages = '')
      }
 
      if(1 != $pages) { //全ページが１でない場合はページネーションを表示する
-		echo "<div class=\"pager\">\n";
-		echo "<ul class=\"pagination\">\n";
+		echo '<div class="pager">';
+		echo '<ul class="pagination">';
         if($paged > 1) {
-			echo "<li class=\"pre\"><a href='".get_pagenum_link($paged - 1)."'><span class=\"pre__text\"></span></a></li>\n";
+			echo '<li class="pre"><a href="'.get_pagenum_link($paged - 1).'"><span class="pre__text"></span></a></li>';
 		}
 		if($paged > 2 && $pages > 3) {
-			echo "<li><a href='".get_pagenum_link(1)."'><span class=\"page-numbers\">1</span></a></li>\n";
+			echo '<li><a href="'.get_pagenum_link(1).'"><span class="page-numbers">1</span></a></li>';
 		}
 		if($paged > 3 && $pages > 4) {
-			echo "<li><span class=\"dot-line\"></span></li>\n";
+			echo '<li><span class="dot-line"></span></li>';
 		}
         for ($i=1; $i <= $pages; $i++) {
         	if (1 != $pages) {
@@ -226,18 +226,18 @@ function pagination($pages = '')
 				}
 				$showitems = ($range * 2)+1;
 				if(!($i >= $paged+$range+1 || $i <= $paged-$range-1) || $pages <= $showitems){
-            		echo ($paged == $i)? "<li><a class=\"active\" href='".get_pagenum_link($i)."'><span class=\"page-numbers\">".$i."</span></a></li>\n":"<li><a href='".get_pagenum_link($i)."'><span class=\"page-numbers\">".$i."</span></a></li>\n";
+            		echo ($paged == $i)? '<li><a class="active" href="'.get_pagenum_link($i).'"><span class="page-numbers">'.$i.'</span></a></li>':'<li><a href="'.get_pagenum_link($i).'"><span class="page-numbers">'.$i.'</span></a></li>';
 				}
             }
         }
 		if($paged < $pages-2 && $pages > 4) {
-			echo "<li><span class=\"dot-line\"></span></li>\n";
+			echo '<li><span class="dot-line"></span></li>';
 		}
 		if($paged < $pages-1 && $pages > 3) {
-			echo "<li><a href='".get_pagenum_link($pages)."'><span class=\"page-numbers\">$pages</span></a></li>\n";
+			echo '<li><a href="'.get_pagenum_link($pages).'"><span class="page-numbers">'.$pages.'</span></a></li>';
 		}
-		if ($paged < $pages) echo "<li class=\"next\"><a href=\"".get_pagenum_link($paged + 1)."\"><span class=\"next__text\"></span></a></li>\n";
-		echo "</ul>\n";
-		echo "</div>\n";
+		if ($paged < $pages) echo '<li class="next"><a href="'.get_pagenum_link($paged + 1).'"><span class="next__text"></span></a></li>';
+		echo '</ul>';
+		echo '</div>';
      }
 }
