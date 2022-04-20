@@ -210,7 +210,7 @@ function pagination($pages = 1, $range = 1)
 		echo '<div class="pager">';
 		echo '<ul class="pagination">';
 		if($paged > 1) {
-			echo '<li class="pre"><a href="'.get_pagenum_link($paged - 1).'"><span class="pre__text"></span></a></li>';
+			echo '<li class="pre"><a href="'.get_pagenum_link($paged - 1).'"><span class="arrow arrow-left"></span></a></li>';
 		}
 		if($paged > 2 && $pages > 3) {
 			echo '<li><a href="'.get_pagenum_link(1).'"><span class="page-numbers">1</span></a></li>';
@@ -235,7 +235,7 @@ function pagination($pages = 1, $range = 1)
 		echo '<li><a href="'.get_pagenum_link($pages).'"><span class="page-numbers">'.$pages.'</span></a></li>';
 	}
 	if ($paged < $pages) {
-		echo '<li class="next"><a href="'.get_pagenum_link($paged + 1).'"><span class="next__text"></span></a></li>';
+		echo '<li class="next"><a href="'.get_pagenum_link($paged + 1).'"><span class="arrow arrow-right"></span></a></li>';
 	}
 	echo '</ul>';
 	echo '</div>';

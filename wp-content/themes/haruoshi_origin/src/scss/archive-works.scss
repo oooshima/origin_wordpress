@@ -59,23 +59,35 @@
   display: inline-block;
 }
 
-.pre {
-  margin-right: 14px;
-  &__text::after {
-    content: "<";
-    font-size: 20px;
+.arrow::before {
+  content: "";
+  width: 14px;
+  height: 14px;
+  border-top: solid 2px $main-color;
+  border-right: solid 2px $main-color;
+  position: absolute;
+}
+
+.arrow {
+  &-left::before {
+    transform: rotate(-135deg);
   }
+  &-right::before {
+    transform: rotate(45deg);
+  }
+}
+
+.pre {
+  margin-top: 4px;
+  margin-right: 20px;
 }
 
 .next {
-  &__text::after {
-    content: ">";
-    font-size: 20px;
-  }
+  margin-top: 4px;
 }
 
 .dot-line::after {
-  content: "...";
+  content: "\2026";
   font-size: 20px;
   margin-right: 14px;
   width: 20px;
