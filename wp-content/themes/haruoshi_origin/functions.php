@@ -209,33 +209,33 @@ function pagination($pages = 1, $range = 1)
 		
 		echo '<ul class="pagination">';
 		if($paged > 1) {
-			echo '<li class="pre"><a href="'.get_pagenum_link($paged - 1).'"><span class="arrow arrow-left"></span></a></li>';
+			echo '<li class="pagination__pre"><a href="'.get_pagenum_link($paged - 1).'"><span class="pagination__arrow pagination__arrow--left"></span></a></li>';
 		}
 		if($paged > 2 && $pages > 3) {
-			echo '<li><a href="'.get_pagenum_link(1).'"><span class="page-numbers">1</span></a></li>';
+			echo '<li><a href="'.get_pagenum_link(1).'"><span class="pagination__page-numbers">1</span></a></li>';
 		}
 		if($paged > 3 && $pages > 4) {
-			echo '<li><span class="dot-line"></span></li>';
+			echo '<li><span class="pagination__dot-line"></span></li>';
 		}
 		for ($i=1; $i <= $pages; $i++) {
 			if($i <= $paged + $range && $i >= $paged - $range){ // $paged ± $range 以内であればページ番号を出力
 				if ($paged == $i) {
-					echo '<li><a class="active" href="'.get_pagenum_link($i).'"><span class="page-numbers">'.$i.'</span></a></li>';
+					echo '<li><span class="pagination__page-numbers pagination__page-numbers--active">'.$i.'</span></li>';
 				} else {
-					echo '<li><a href="'.get_pagenum_link($i).'"><span class="page-numbers">'.$i.'</span></a></li>';
+					echo '<li><a href="'.get_pagenum_link($i).'"><span class="pagination__page-numbers">'.$i.'</span></a></li>';
 				}
 			}
 		}
 	}
 	
 	if($paged < $pages-2 && $pages > 4) {
-		echo '<li><span class="dot-line"></span></li>';
+		echo '<li><span class="pagination__dot-line"></span></li>';
 	}
 	if($paged < $pages-1 && $pages > 3) {
-		echo '<li><a href="'.get_pagenum_link($pages).'"><span class="page-numbers">'.$pages.'</span></a></li>';
+		echo '<li><a href="'.get_pagenum_link($pages).'"><span class="pagination__page-numbers">'.$pages.'</span></a></li>';
 	}
 	if ($paged < $pages) {
-		echo '<li class="next"><a href="'.get_pagenum_link($paged + 1).'"><span class="arrow arrow-right"></span></a></li>';
+		echo '<li class="pagination__next"><a href="'.get_pagenum_link($paged + 1).'"><span class="pagination__arrow pagination__arrow--right"></span></a></li>';
 	}
 	echo '</ul>';
 }
