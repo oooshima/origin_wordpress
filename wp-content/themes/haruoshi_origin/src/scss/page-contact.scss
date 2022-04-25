@@ -9,14 +9,14 @@
       @include mq-sp {
         display: block;
       }
-      &-title {
-        white-space: nowrap;
-      }
-      &-input {
-        border: solid 1px $accent-color;
-        width: 100%;
-        height: 100%;
-      }
+    }
+    &__item-title {
+      white-space: nowrap;
+    }
+    &__item-input {
+      border: solid 1px $accent-color;
+      width: 100%;
+      height: 100%;
     }
   }
 
