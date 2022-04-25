@@ -9,7 +9,7 @@
 
 get_header(); ?>
 
-<article class="container">
+<article class="container contact">
     <h1 class="section-title">Contact</h1>
     <div class="container__contents"><?php the_content(); ?></div>
 </article>
