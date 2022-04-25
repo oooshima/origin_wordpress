@@ -219,15 +219,16 @@ function pagination($pages = 1, $range = 1)
 			echo '<li><span class="dot-line"></span></li>';
 		}
 		for ($i=1; $i <= $pages; $i++) {
-				if($i <= $paged + $range && $i >= $paged - $range){ // $paged ± $range 以内であればページ番号を出力
-					if ($paged == $i) {
-						echo '<li><a class="active" href="'.get_pagenum_link($i).'"><span class="page-numbers">'.$i.'</span></a></li>';
-					} else {
-						echo '<li><a href="'.get_pagenum_link($i).'"><span class="page-numbers">'.$i.'</span></a></li>';
-					}
+			if($i <= $paged + $range && $i >= $paged - $range){ // $paged ± $range 以内であればページ番号を出力
+				if ($paged == $i) {
+					echo '<li><a class="active" href="'.get_pagenum_link($i).'"><span class="page-numbers">'.$i.'</span></a></li>';
+				} else {
+					echo '<li><a href="'.get_pagenum_link($i).'"><span class="page-numbers">'.$i.'</span></a></li>';
 				}
+			}
 		}
 	}
+	
 	if($paged < $pages-2 && $pages > 4) {
 		echo '<li><span class="dot-line"></span></li>';
 	}
