@@ -1,21 +1,21 @@
 @import "variables";
 @import "mixin";
 
-.name,
-.email,
-.message {
-  display: flex;
-  justify-content: space-between;
-  @include mq-sp {
-    display: block;
-  }
-  &__title {
-    white-space: nowrap;
-  }
-  &__input {
-    border: solid 1px $accent-color;
-    width: 100%;
-    height: 100%;
+.contact-form {
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    @include mq-sp {
+      display: block;
+    }
+    &-title {
+      white-space: nowrap;
+    }
+    &-input {
+      border: solid 1px $accent-color;
+      width: 100%;
+      height: 100%;
+    }
   }
 }
 
@@ -39,16 +39,21 @@
   display: flex;
   justify-content: center;
   margin-top: 30px;
+  &__submit-button {
+    color: $base-color;
+    background-color: $main-color;
+    width: 200px;
+    height: 54px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
-.submit-button {
-  color: $base-color;
-  background-color: $main-color;
-  width: 200px;
-  height: 54px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.wpcf7-submit {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 /* デフォルトのメッセージ等を削除 */
