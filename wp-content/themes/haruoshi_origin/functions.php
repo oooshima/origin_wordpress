@@ -215,7 +215,7 @@ function pagination($pages = 1, $range = 1)
 			echo '<li><a href="'.get_pagenum_link(1).'"><span class="pagination__page-numbers">1</span></a></li>';
 		}
 		if($paged > 3 && $pages > 4) {
-			echo '<li><span class="pagination__dot-line"></span></li>';
+			echo '<li><span class="pagination__dot-line">...</span></li>';
 		}
 		for ($i=1; $i <= $pages; $i++) {
 			if($i <= $paged + $range && $i >= $paged - $range){ // $paged ± $range 以内であればページ番号を出力
@@ -229,7 +229,7 @@ function pagination($pages = 1, $range = 1)
 	}
 	
 	if($paged < $pages-2 && $pages > 4) {
-		echo '<li><span class="pagination__dot-line"></span></li>';
+		echo '<li><span class="pagination__dot-line">...</span></li>';
 	}
 	if($paged < $pages-1 && $pages > 3) {
 		echo '<li><a href="'.get_pagenum_link($pages).'"><span class="pagination__page-numbers">'.$pages.'</span></a></li>';

@@ -86,8 +86,7 @@
       transform: rotate(45deg);
     }
   }
-  &__dot-line::after {
-    content: "\2026";
+  &__dot-line {
     font-size: 20px;
     margin-right: 14px;
     width: 20px;
