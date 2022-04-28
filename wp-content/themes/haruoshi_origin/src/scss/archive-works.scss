@@ -43,28 +43,47 @@
 }
 
 .pagination {
+  display: flex;
+  justify-content: center;
   margin-top: 50px;
-}
-
-.page-numbers {
-  font-size: 20px;
-  margin-right: 14px;
-  &:last-of-type {
-    margin-right: 0;
+  &__page-numbers {
+    font-size: 20px;
+    margin-right: 14px;
+    width: 20px;
+    display: inline-block;
+    &--active {
+      position: relative;
+      &::after {
+        content: "";
+        width: 20px;
+        height: 2px;
+        display: inline-block;
+        background-color: $main-color;
+        position: absolute;
+        bottom: -4px;
+        left: calc(50% - 10px);
+      }
+    }
   }
-}
-
-.current {
-  position: relative;
-}
-
-.current::after {
-  content: "";
-  width: 20px;
-  height: 2px;
-  display: inline-block;
-  background-color: $main-color;
-  position: absolute;
-  bottom: -4px;
-  left: calc(50% - 10px);
+  &__arrow {
+    display: block;
+    width: 14px;
+    height: 14px;
+    border-top: solid 2px $main-color;
+    border-right: solid 2px $main-color;
+    margin-top: 4px;
+    &--left {
+      transform: rotate(-135deg);
+      margin-right: 8px;
+    }
+    &--right {
+      transform: rotate(45deg);
+    }
+  }
+  &__dot-line {
+    font-size: 20px;
+    margin-right: 14px;
+    width: 20px;
+    display: inline-block;
+  }
 }

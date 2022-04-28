@@ -11,16 +11,18 @@ get_header(); ?>
     <section class="news section-wrapper">
         <h1 class="section-title">News</h1>
         <?php
-        $args = array(
-            'orderby' => 'name',
-            'order' => 'ASC'
-        );
         $taxonomy_terms = get_terms('news_tag');
-        if ($taxonomy_terms):?>
+        if ($taxonomy_terms):
+            $term_object = get_queried_object();
+            $term_slug = $term_object->slug; ?>
         <ul class="news__tag-list">
-            <?php foreach( $taxonomy_terms as $term ):?>
-            <li class="news__tag">
-                <a href="<?= get_term_link( $term ) ?>">#<?= $term->name ?></a>
+            <?php foreach( $taxonomy_terms as $term ):
+                $classNameOfList = $term->slug === $term_slug ? "news__tag news__tag--selected" : "news__tag"; ?>
+            <li class="<?= $classNameOfList ?>">
+                <a
+                    href="<?= get_post_type_archive_link("news") . "?" . http_build_query(["news_tag" => $term->slug]); ?>">
+                    #<?= $term->name ?>
+                </a>
             </li>
             <?php endforeach; ?>
         </ul>

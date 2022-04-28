@@ -30,15 +30,15 @@
   &__tag {
     border: solid 2px $accent-color;
     background-color: $base-color;
-    border-radius: 100vh;
+    border-radius: 100px;
     margin-right: 10px;
     margin-bottom: 10px;
     padding: 10px 20px;
+    &--selected {
+      background-color: $accent-color;
+    }
     &:last-of-type {
       margin-right: 0px;
     }
-  }
-  &__tag--select {
-    background-color: $accent-color;
   }
 }
