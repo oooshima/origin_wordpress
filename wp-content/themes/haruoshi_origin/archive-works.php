@@ -26,7 +26,12 @@ get_header(); ?>
             </li>
             <?php endwhile; ?>
         </ul>
-        <?php endif;?>
+        <?php
+        if (function_exists("pagination")) {
+            pagination($wp_query->max_num_pages);
+        }
+        endif;
+        ?>
     </section>
 </article>
 

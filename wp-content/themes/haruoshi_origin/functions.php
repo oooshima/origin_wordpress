@@ -189,3 +189,68 @@ acf_add_local_field_group(array(
 ));
 
 endif;
+
+/**
+ * ページネーション
+ */
+function pagination($pages = 1, $range = 1)
+{
+	$pages = (int)$pages; //float型で渡ってくるので明示的にint型 へ
+	$paged = get_query_var('paged') ? get_query_var('paged') : 1;
+
+	// 1ページしかない時
+	if ($pages === 1) {
+		return;
+	}
+
+	if(1 != $pages) { //全ページが１でない場合はページネーションを表示する
+		// 最初と最後のページにいるときは前後3ページを表示
+		$range = ($paged == 1 || $paged == $pages) ? 2 : 1;
+		
+		echo '<ul class="pagination">';
+		if($paged > 1) {
+			echo '<li><a href="'.get_pagenum_link($paged - 1).'"><span class="pagination__arrow pagination__arrow--left"></span></a></li>';
+		}
+		if($paged > 2 && $pages > 3) {
+			echo '<li><a href="'.get_pagenum_link(1).'"><span class="pagination__page-numbers">1</span></a></li>';
+		}
+		if($paged > 3 && $pages > 4) {
+			echo '<li><span class="pagination__dot-line">...</span></li>';
+		}
+		for ($i=1; $i <= $pages; $i++) {
+			if($i <= $paged + $range && $i >= $paged - $range){ // $paged ± $range 以内であればページ番号を出力
+				if ($paged == $i) {
+					echo '<li><span class="pagination__page-numbers pagination__page-numbers--active">'.$i.'</span></li>';
+				} else {
+					echo '<li><a href="'.get_pagenum_link($i).'"><span class="pagination__page-numbers">'.$i.'</span></a></li>';
+				}
+			}
+		}
+		if($paged < $pages-2 && $pages > 4) {
+			echo '<li><span class="pagination__dot-line">...</span></li>';
+		}
+		if($paged < $pages-1 && $pages > 3) {
+			echo '<li><a href="'.get_pagenum_link($pages).'"><span class="pagination__page-numbers">'.$pages.'</span></a></li>';
+		}
+		if ($paged < $pages) {
+			echo '<li><a href="'.get_pagenum_link($paged + 1).'"><span class="pagination__arrow pagination__arrow--right"></span></a></li>';
+		}
+		echo '</ul>';
+	}
+}
+
+add_action('pre_get_posts', 'change_posts_per_page');
+
+/**
+ * 表示する投稿数
+ */
+function change_posts_per_page($query)
+{
+	if (is_admin() || !$query->is_main_query()) {
+		return;
+	}
+	if (is_post_type_archive('works')) {
+		$query->set('posts_per_page', 6);
+	}
+	return;
+}
