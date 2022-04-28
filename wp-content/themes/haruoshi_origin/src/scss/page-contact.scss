@@ -1,0 +1,67 @@
+@import "variables";
+@import "mixin";
+
+.contact {
+  .contact-form {
+    &__item {
+      display: flex;
+      justify-content: space-between;
+      @include mq-sp {
+        display: block;
+      }
+    }
+    &__item-title {
+      white-space: nowrap;
+    }
+    &__item-input {
+      border: solid 1px $accent-color;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .wpcf7-form-control-wrap {
+    display: block;
+    width: calc(100% - 118px);
+    height: 42px;
+    margin-bottom: 10px;
+    @include mq-sp {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  }
+
+  .wpcf7-form-control-wrap.your-message {
+    height: 160px;
+  }
+
+  .button-wrapper {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    &__submit-button {
+      color: $base-color;
+      background-color: $main-color;
+      width: 200px;
+      height: 54px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .wpcf7-submit {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  /* デフォルトのメッセージ等を削除 */
+  .wpcf7-spinner,
+  .wpcf7-not-valid-tip,
+  .screen-reader-response,
+  .wpcf7-response-output {
+    display: none;
+  }
+}
